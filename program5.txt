@@ -1,0 +1,35 @@
+#include<iostream.h> 
+#include<conio.h>
+#include<string.h> 
+class STRING
+{
+char a[50]; public:
+void get()
+{
+cout<<"\n\n Enter the String:\t"; cin>>a;
+}
+void display()
+{
+cout<<"The length of the string is :\t"<<a<<"\t"<<strlen(a);
+}
+void operator==(STRING x) // comparing two strings
+{
+cout<<"\n\n\t\t String Comparision\n"; if((strcmp(a,x.a))==0)
+cout<<"\n\t\t Strings are equal\n"; else
+cout<<"\n\t\t Strings are unequal\n";
+}
+void operator+(STRING x) // combining two strings
+{
+cout<<"\n Concatenated String:\t"; cout<<strcat(a,x.a);
+cout<<"\n\n\n Length of the Concatenated string is:\t"<<strlen(a);
+}
+};
+void main()
+{
+clrscr(); STRING s1,s2;
+s1.get(); cout<<"\n"; s2.get(); 
+cout<<"\n"; s1.display();
+cout<<"\n\n"; s2.display();
+s1==s2;
+s1+s2; getch();
+}

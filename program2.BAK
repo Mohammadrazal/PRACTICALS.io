@@ -1,0 +1,44 @@
+#include<iostream.h>
+#include<conio.h>
+class arithmetic
+{
+int a; float b;
+public:
+void getdata()
+{
+cout<<"\n Enter a value:"; cin>>a;
+cout<<"\n Enter b value:"; cin>>b;
+}
+void add() // Addition
+{
+cout<<"\n\n Addition: a+b="<<a+b;
+}
+void sub() // Subtraction
+{
+cout<<"\n\n Subtraction: a-b="<<a-b;
+}
+void mul() // Multiplication
+{
+cout<<"\n\n Multiplication: a*b="<<a*b;
+ }
+ void div() // Division
+{
+cout<<"\n\n Division: a/b="<<a/b;
+}
+void mod() // Modulo division
+{
+cout<<"\n\n Modulo Division="<<a%(int)b;
+}
+};
+void main()
+{
+clrscr();
+cout<<"\n\n\t\t\t ARITHMETIC OPERATIONS\n"; arithmetic ao;
+ao.getdata();
+ao.add();
+ao.sub();
+ao.mul();
+ao.div();
+ao.mod();
+getch();
+}

@@ -1,0 +1,21 @@
+#include<iostream.h>
+#include<conio.h> 
+#include<fstream.h>
+void main()
+{
+fstream f; char c; int lno=1;
+f.open("line.txt",ios::in|ios::out|ios::trunc);
+f<<"C \n C++ \n JAVA \n COBOL \n PASCAL";
+f.seekg(0);
+clrscr(); 
+cout<<lno++<<" . ";
+while(f)
+{
+f.get(c);
+if(c=='\n') cout<<"\n"<<lno++<<" . ";
+else
+cout<<c;
+}
+f.close();
+getch();
+}

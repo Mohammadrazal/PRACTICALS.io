@@ -1,0 +1,14 @@
+#include<fstream.h>
+#include<conio.h>
+#include<iostream.h>
+void main()
+{
+ifstream in; ofstream out; char c;
+out.open("file1.txt",ios::ate);
+in.open("file2.txt",ios::in); while(in)
+{
+in.get(c); // Read from file2 out.put(c); // Write into file1
+}
+in.close();
+out.close();
+}

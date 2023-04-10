@@ -1,0 +1,17 @@
+#include<iostream.h> 
+#include<string.h>
+#include<conio.h> 
+void main()
+ {
+char str1[20],str2[20],*s,*rs; 
+clrscr();
+cout<<"\n\n Enter a string:"; 
+cin>>str1;
+strcpy(str2,str1);
+s=str1; 
+rs=strrev(str2);
+if(strcmp(s,rs)==0)
+cout<<"\n\n The given string is palindrome"; 
+else
+cout<<"\n\n The given string is not a palindrome"; getch();
+}

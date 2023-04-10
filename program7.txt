@@ -1,0 +1,84 @@
+#include<iostream.h> 
+#include<conio.h> 
+class SHAPE
+public:
+float l,b,area,peri; void getdata()
+{
+cout<<"\n\n Enter the values of length and breath:"; cin>>l>>b;
+}
+virtual void calc_area()
+{
+}
+virtual void calc_peri()
+{
+}
+};
+class SQUARE:public SHAPE
+{
+int a; public:
+void calc_area()
+{
+cout<<"\n Enter the value for side of square:"; cin>>a;
+area=a*a;
+cout<<"\n\n Area of square="<<area;
+}
+void calc_peri()
+{
+peri=4*a;
+cout<<"\n\n Perimeter of square ="<<peri;
+}
+};
+ 
+class RECTANGLE:public SHAPE
+void calc_area()
+{
+getdata(); area=l*b;
+cout<<"\n\n Area of rectangle="<<area;
+}
+void calc_peri()
+{
+peri=2*(l+b);
+cout<<"\n\n Perimeter of rectangle="<<peri;
+}
+};
+class TRIANGLE:public SHAPE
+{
+public:
+void calc_area()
+{
+getdata(); area=(l*b)/2.0;
+cout<<"\n\n Area of the triangle ="<<area;
+}
+void calc_peri()
+{
+int h;
+cout<<"\n\n Enter height="; cin>>h;
+peri=l+b+h;
+cout<<"\n\n Perimeter of triangle="<<peri;
+}
+};
+void main()
+{
+int opt;
+SHAPE *ptr; clrscr();
+cout<<"\n\n\t\t 1.SQUARE \n\n\t\t 2.RECTANGLE \n\n\t\t 3.TRIANGLE "; 
+cout<<"\n\n\t Enter your option:";
+cin>>opt; switch(opt)
+{
+case 1:
+SQUARE s;
+ptr=&s;
+ptr->calc_area(); ptr->calc_peri(); break;
+case 2:
+RECTANGLE r;
+ptr=&r;
+ptr->calc_area(); ptr->calc_peri(); break;
+case 3:
+TRIANGLE t;
+ptr=&t;
+ptr->calc_area(); ptr->calc_peri(); break;
+default:
+cout<<"\n\n\t\t INVALID OPTION"; break;
+}
+getch();
+}

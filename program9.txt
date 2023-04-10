@@ -1,0 +1,43 @@
+#include<iostream.h>
+#include<conio.h>
+int i,j,c1,c2,r1,r2,a[10][10];
+float b[10][10],c[10][10];
+void get(int &x)
+{
+cin>>x;
+}
+void get(float &x)
+{
+cin>>x;
+}
+void sum()
+{
+for(i=0;i<r1;i++) for(j=0;j<c1;j++)
+c[i][j]=a[i][j]+b[i][j];
+}
+void display()
+{
+for(i=0;i<r1;i++)
+{
+for(j=0;j<c1;j++)
+cout<<c[i][j]<<"\t"; cout<<"\n";
+}
+}
+void main()
+{
+clrscr();
+cout<<"\n\n Enter row,col for matrix1:"; cin>>r1>>c1;
+cout<<"\n\n Enter row,col for matrix2:"; cin>>r2>>c2;
+if((r1!=r2||c1!=c2))
+{
+cout<<"\n Matrix addition is not possible"; goto end;
+}
+cout<<"\n Enter matrix1\n\n"; for(i=0;i<r1;i++)
+for(j=0;j<c1;j++) get(a[i][j]);
+cout<<"\n Enter matrix2\n\n"; for(i=0;i<r2;i++)
+for(j=0;j<c2;j++) get(b[i][j]);
+sum();
+cout<<"The Resultant matrix\n"; display();
+end: getch();
+}
+

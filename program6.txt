@@ -1,0 +1,53 @@
+#include<iostream.h>
+#include<conio.h>
+void line()
+{
+cout.width(80); cout.fill('_');
+}
+class emp
+{
+public:
+int eno;
+char gr, ename[25], dept[20]; float bs;
+void getdata()
+{
+cout<<"\n Enter the employee no:"; cin>>eno;
+cout<<"\n Enter the employee name:"; cin>>ename;
+cout<<"\n Enter the employee department:"; cin>>dept;
+cout<<"\n Enter the basic pay:"; cin>>bs;
+cout<<"\n Enter the grade for salary(a/b):"; cin>>gr;
+}
+};
+class pay:public emp
+{
+float da,np,gs,hra,pf; public:
+void calc()
+{
+if(gr=='a'||gr=='A')
+{
+da=bs*0.08; hra=bs*0.2; pf=bs*0.06;
+}
+else if(gr=='b'||gr=='B')
+{
+da=bs*0.06; hra=bs*0.15; pf=bs*0.05;
+}
+gs=bs+da+hra; np=gs-pf;
+cout<<"\n\t\t\t EMPLOYEE PAYSLIP"; cout<<"\n\n\n ENO:"<<eno; cout<<"\n\n\n ENAME:"<<ename; 
+cout<<"\n\n\n DEPARTMENT:"<<dept; cout<<"\n\n\n JULY 2021"; cout<<"\n\n";
+line(); cout<<"\n\n"; cout.precision(2);
+cout.setf(ios::fixed,ios::floatfield); cout<<"BASIC PAY:"<<bs;
+cout<<"\t DA:"<<da; cout<<"\t HRA:"<<hra; cout<<"\t PF:"<<pf; cout<<"\n\n";
+line(); cout<<"\n\n";
+cout<<"GROSS SALARY:"<<gs;
+cout<<"\n\n";
+cout<<"\n\n NET SALARY:"<<np; cout<<"\n\n";
+line();
+cout<<"\n\n\t\t\t THANK YOU";
+}
+};
+void main()
+{
+clrscr(); pay p; p.getdata();
+p.calc();
+getch();
+}

@@ -1,0 +1,40 @@
+#include<iostream.h>
+#include<conio.h> 
+class number
+{
+int no, sum;
+public:
+void add(void);
+inline void display(int); number()
+{
+sum=0;
+}
+cout<<"\n\n\n Enter a number:"; cin>>no;
+}
+~number()
+{
+}
+}
+inline void number::display(int result)
+{
+cout<<"\n\n Sum of Individual Digits="<<result;
+}
+void number::add()
+{
+loop: while(no>0)
+{
+sum=sum+no%10; no=no/10;
+}
+if(sum>9)
+{
+no=sum; sum=0; goto loop;
+}
+display(sum);
+}
+void main()
+{
+clrscr(); 
+number n;
+n.add();
+getch();
+}

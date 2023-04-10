@@ -1,0 +1,31 @@
+#include<iostream.h>
+#include<conio.h> 
+class FLOAT
+{
+float a; public: FLOAT()
+{
+cout<<"\n\n Enter the float number:"; cin>>a;
+}
+void operator+(FLOAT x)
+{
+cout<<"\n\n\t ADDITION OF TWO NUMBERS:"<<a+x.a;
+}
+void operator-(FLOAT x)
+{
+cout<<"\n\n\t SUBTRACTION OF TWO NUMBERS:"<<a-x.a;
+}
+void operator*(FLOAT x)
+{
+cout<<"\n\n\t MULTIPLICATION OF TWO NUMBERS:"<<a*x.a;
+}
+void operator/(FLOAT x)
+{
+cout<<"\n\n\t DIVISION OF TWO NUMBERS:"<<a/x.a;
+}
+};
+void main()
+{
+clrscr();
+FLOAT f1,f2;
+f1+f2; f1-f2; f1*f2; f1/f2; getch();
+}

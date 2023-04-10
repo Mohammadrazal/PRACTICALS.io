@@ -1,0 +1,39 @@
+#include<iostream.h>
+#include<conio.h> class class2;
+class class1
+{
+int a; float b; public:
+void getdata()
+{
+cout<<"\n Enter a and b values:"; cin>>a>>b;
+}
+void display()
+{
+ cout<<"\n\n Class1 content \n\n"; cout<<"\n a="<<a<<"\n b="<<b;
+ }
+friend void result(class1,class2);
+};
+class class2
+{
+int x;
+float y; public:
+void getdata()
+{
+cout<<"\n Enter x and y values:"; cin>>x>>y;
+}
+void display()
+{
+cout<<"\n\n Class 2 content \n\n"; cout<<"\n x="<<x<<"\n y="<<y;
+}
+friend void result(class1,class2);
+};
+void result(class1 c1,class2 c2)
+{
+cout<<"\n\n Class1 content using friend function\n\n"; cout<<"\n a="<<c1.a<<"\n b="<<c1.b;
+cout<<"\n \n Class2 content using friend function\n"; cout<<"\n x="<<c2.x<<"\n y="<<c2.y;
+}
+void main()
+{
+clrscr();
+class1 cl1; class2 cl2; cl1.getdata(); cl2.getdata(); cl1.display(); cl2.display(); result(cl1,cl2); getch();
+}
